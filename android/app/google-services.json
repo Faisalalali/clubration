@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "928773039311",
+    "project_id": "ie-club-innovation",
+    "storage_bucket": "ie-club-innovation.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928773039311:android:f0022f33e431e1a15783ba",
+        "android_client_info": {
+          "package_name": "com.ieclub.innovation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "928773039311-ki62ri2jc0kl4dlni65flm4vid3bmuv5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAa1WmmVphRT7vKpYDTmBwL4zYjd2YMmWk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928773039311-ki62ri2jc0kl4dlni65flm4vid3bmuv5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
