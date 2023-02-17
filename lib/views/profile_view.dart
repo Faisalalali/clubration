@@ -29,15 +29,17 @@ class ProfileView extends StatelessWidget {
             ),
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: const Column(
+              child: Column(
                 children: [
                   ProfileButton(
                     icon: Icons.abc,
                     text: 'تغيير كلمة المرور',
+                    onPressed: () {},
                   ),
                   ProfileButton(
                     icon: Icons.abc_rounded,
                     text: 'تغيير البريد الالكتروني',
+                    onPressed: () {},
                   )
                 ],
               ),
