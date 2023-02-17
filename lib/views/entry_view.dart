@@ -61,7 +61,7 @@ class _EntryViewState extends State<EntryView> {
                                 showDialog(
                                     context: context,
                                     builder: (ctx) => AlertDialog(
-                                          title: Text('رقم جامعي غير صحيح'),
+                                          title: Text('الرقم الجامعي غير صحيح'),
                                         ));
                                 return;
                               }

@@ -111,34 +111,41 @@ class HomeView extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: GNav(
-                padding: const EdgeInsets.fromLTRB(20, 4, 20, 4),
-                // activeColor: Colors.white,
+                padding: const EdgeInsets.fromLTRB(1, 6, 7, 3),
+                activeColor: Colors.white,
                 color: Colors.white,
                 backgroundColor: const Color(0xFF354252),
+                tabMargin: EdgeInsets.fromLTRB(15, 4, 15, 4),
+
                 // tabBackgroundColor: const Color(0xFF1BB58C),
                 // tabActiveBorder: ,
                 tabBorder: Border.all(color: Colors.transparent),
                 tabBorderRadius: 10,
                 iconSize: 20,
                 gap: 10,
+                textStyle: TextStyle(fontSize: 15),
                 tabs: const [
                   GButton(
                     icon: Icons.home,
                     text: 'الرئيسية',
                     textSize: 3,
-                    backgroundColor: Colors.pink,
+                    iconActiveColor: Colors.white,
+                    backgroundColor: Color.fromARGB(255, 97, 204, 187),
                   ),
                   GButton(
                     icon: Icons.calendar_today,
-                    text: 'التقويم',
+                    text: 'المهام',
+                    backgroundColor: Color.fromARGB(255, 94, 109, 255),
                   ),
                   GButton(
                     icon: Icons.notifications,
-                    text: 'الاشعارات',
+                    text: 'الإحصائيات',
+                    backgroundColor: Color.fromARGB(255, 254, 177, 79),
                   ),
                   GButton(
                     icon: Icons.person,
                     text: 'الملف الشخصي',
+                    backgroundColor: Color.fromARGB(255, 238, 57, 132),
                   ),
                 ]),
           ),
