@@ -14,6 +14,7 @@ class EntryView extends StatefulWidget {
 class _EntryViewState extends State<EntryView> {
   final _uidController = TextEditingController();
   final auth = Auth();
+  final valid_id = RegExp(r'^20((1[2468]|2[024])\d{3}[02468]|(1[3579]|2[13])\d{3}[13579])0$');
 
   @override
   void dispose() {
@@ -41,6 +42,7 @@ class _EntryViewState extends State<EntryView> {
                       child: SizedBox(
                         width: MediaQuery.of(context).size.width * 0.8,
                         child: TextField(
+                          style: TextStyle(color: Colors.white),
                           controller: _uidController,
                           decoration:
                               const InputDecoration(hintText: 'رقمك الجامعي', hintTextDirection: TextDirection.rtl),
@@ -55,6 +57,14 @@ class _EntryViewState extends State<EntryView> {
                         height: MediaQuery.of(context).size.width * 0.13,
                         child: ElevatedButton(
                             onPressed: () async {
+                              if (!valid_id.hasMatch(_uidController.text)) {
+                                showDialog(
+                                    context: context,
+                                    builder: (ctx) => AlertDialog(
+                                          title: Text('رقم جامعي غير صحيح'),
+                                        ));
+                                return;
+                              }
                               String result =
                                   await auth.signInWithEmailAndPassword('s${_uidController.text}@kfupm.edu.sa', 'x');
                               if (result.contains('user-not-found')) {

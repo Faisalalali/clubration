@@ -33,6 +33,7 @@ class _RegisterViewState extends State<RegisterView> {
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width * 0.8,
                     child: TextFormField(
+                      style: TextStyle(color: Colors.white),
                       enabled: false,
                       initialValue: widget.userEmail,
                       decoration: const InputDecoration(hintText: 'رقمك الجامعي'),
@@ -44,6 +45,7 @@ class _RegisterViewState extends State<RegisterView> {
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width * 0.8,
                     child: TextField(
+                      style: TextStyle(color: Colors.white),
                       decoration: const InputDecoration(hintText: 'كلمة المرور'),
                       controller: _passwordController,
                     ),
@@ -54,6 +56,7 @@ class _RegisterViewState extends State<RegisterView> {
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width * 0.8,
                     child: TextField(
+                      style: TextStyle(color: Colors.white),
                       decoration: const InputDecoration(hintText: 'تأكيد كلمة المرور'),
                       controller: _passwordConfirmController,
                     ),
@@ -69,7 +72,7 @@ class _RegisterViewState extends State<RegisterView> {
                       child: ElevatedButton(
                         onPressed: () async {
                           if (_passwordController.text != _passwordConfirmController.text) {
-                            print('passwords do not match');
+                            print('كلمة المرور غير متطابقة');
                             return;
                           }
                           var result = await auth.registerWithEmailAndPassword(
