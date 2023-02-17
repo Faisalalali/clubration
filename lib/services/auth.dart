@@ -38,7 +38,8 @@ class Auth {
     try {
       UserCredential result =
           await _auth.createUserWithEmailAndPassword(email: email, password: password).then((result) async {
-        return await DatabaseService.instance?.createUser(user: LocalUser(uid: result.user!.uid, displayName: ''));
+        print(result.user);
+        return await DatabaseService.instance?.createUser(user: LocalUser(uid: result.user!.uid, displayName: 'new'));
       });
       User? user = result.user;
 

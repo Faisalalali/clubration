@@ -1,65 +1,103 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/services/auth.dart';
+import 'package:flutter_application_1/views/home_view.dart';
 
-class RegisterView extends StatelessWidget {
+class RegisterView extends StatefulWidget {
   const RegisterView({super.key, required this.userEmail});
   final String userEmail;
+
+  @override
+  State<RegisterView> createState() => _RegisterViewState();
+}
+
+class _RegisterViewState extends State<RegisterView> {
+  // final _uidController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _passwordConfirmController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    final auth = Auth();
     String password = '';
+    String passwordConfirm = '';
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('إنشاء حساب جديد'),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.8,
-                child: const TextField(
-                  decoration: InputDecoration(hintText: 'رقمك الجامعي'),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.8,
-                child: TextFormField(
-                  enabled: false,
-                  initialValue: userEmail,
-                  decoration: const InputDecoration(hintText: 'كلمة المرور'),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.8,
-                child: TextField(
-                  decoration: const InputDecoration(hintText: 'تأكيد كلمة المرور'),
-                  onChanged: (value) {
-                    password = value;
-                  },
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(28.0),
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.8,
-                height: MediaQuery.of(context).size.width * 0.12,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('تسجيل جديد'),
+      body: Stack(
+        children: [
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text('إنشاء حساب جديد'),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    child: TextFormField(
+                      enabled: false,
+                      initialValue: widget.userEmail,
+                      decoration: const InputDecoration(hintText: 'رقمك الجامعي'),
+                    ),
                   ),
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    child: TextField(
+                      decoration: const InputDecoration(hintText: 'كلمة المرور'),
+                      controller: _passwordController,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    child: TextField(
+                      decoration: const InputDecoration(hintText: 'تأكيد كلمة المرور'),
+                      controller: _passwordConfirmController,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(28.0),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    height: MediaQuery.of(context).size.width * 0.12,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: ElevatedButton(
+                        onPressed: () async {
+                          if (_passwordController.text != _passwordConfirmController.text) {
+                            print('passwords do not match');
+                            return;
+                          }
+                          var result = await auth.registerWithEmailAndPassword(
+                              's${widget.userEmail}@kfupm.edu.sa', _passwordController.text);
+
+                          print('success');
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const HomeView(),
+                          ));
+                        },
+                        child: const Text('تسجيل جديد'),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: AppBar(
+              elevation: 0,
+              backgroundColor: Colors.transparent,
+            ),
+          )
+        ],
       ),
     );
   }

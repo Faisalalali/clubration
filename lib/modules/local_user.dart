@@ -1,5 +1,5 @@
 class LocalUser {
-  String uid;
+  String? uid;
   String displayName;
 
   LocalUser({required this.uid, required this.displayName});

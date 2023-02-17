@@ -1,11 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/modules/local_user.dart';
 import 'package:flutter_application_1/views/entry_view.dart';
+import 'package:provider/provider.dart';
+
+import 'services/auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const MainApp());
+  runApp(StreamProvider.value(initialData: null, value: Auth().user, child: const MainApp()));
 }
 
 class MainApp extends StatelessWidget {
@@ -13,9 +17,19 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<LocalUser?>(context);
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+            fontFamily: 'ReadexPro',
+            textTheme: const TextTheme(
+              bodyLarge: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+              bodyMedium: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+              bodySmall: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+            ).apply(
+              bodyColor: Colors.white,
+              displayColor: Colors.white,
+            ),
             scaffoldBackgroundColor: const Color(0xFF232736),
             colorScheme: ColorScheme.fromSwatch(
               //primarySwatch with color 0xFF5B6FFB
