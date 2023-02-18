@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_application_1/services/database.dart';
+import 'package:flutter/foundation.dart';
 
 import '../modules/local_user.dart';
 
@@ -17,7 +18,10 @@ class Auth {
     try {
       UserCredential result = await _auth.signInAnonymously();
       User? user = result.user;
-      return _userFromFirebase(user!);
+      if (user == null) {
+        throw Exception('Could not sign in anonymously');
+      }
+      return _userFromFirebase(user);
     } catch (e) {
       return null;
     }
@@ -27,7 +31,10 @@ class Auth {
     try {
       UserCredential result = await _auth.signInWithEmailAndPassword(email: email, password: password);
       User? user = result.user;
-      return _userFromFirebase(user!);
+      if (user != null) {
+        throw Exception('User not found');
+      }
+      return _userFromFirebase(user);
     } catch (error) {
       print(error.toString());
       return error.toString().substring(0, error.toString().indexOf(']') + 1);
