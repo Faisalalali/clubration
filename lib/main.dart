@@ -1,14 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/modules/local_user.dart';
-import 'package:flutter_application_1/views/create_event.dart';
 import 'package:flutter_application_1/views/entry_view.dart';
-import 'package:flutter_application_1/views/home_view.dart';
-import 'package:flutter_application_1/views/profile_view.dart';
 import 'package:provider/provider.dart';
 
 import 'services/auth.dart';
-import 'views/request_poster_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -59,6 +55,6 @@ class MainApp extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             )),
-        home: const RequestPosterView());
+        home: const EntryView());
   }
 }
