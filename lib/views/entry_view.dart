@@ -31,8 +31,12 @@ class _EntryViewState extends State<EntryView> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+                const Image(
+                  image: AssetImage('assets/images/logo.png'),
+                  height: 150,
+                ),
                 const Text(
-                  'مرحبا بك في تطبيقنا',
+                  'مرحبا بك في \nClubration',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
                 ),
                 Column(
