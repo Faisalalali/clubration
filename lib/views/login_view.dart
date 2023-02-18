@@ -35,6 +35,7 @@ class LoginView extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.8,
                     child: TextField(
                       obscureText: true,
+                      autocorrect: false,
                       decoration: const InputDecoration(hintText: 'كلمة المرور'),
                       onChanged: (value) {
                         password = value;

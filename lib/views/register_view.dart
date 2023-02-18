@@ -46,6 +46,7 @@ class _RegisterViewState extends State<RegisterView> {
                     width: MediaQuery.of(context).size.width * 0.8,
                     child: TextField(
                       obscureText: true,
+                      autocorrect: false,
                       style: const TextStyle(color: Colors.white),
                       decoration: const InputDecoration(hintText: 'كلمة المرور'),
                       controller: _passwordController,
@@ -58,6 +59,7 @@ class _RegisterViewState extends State<RegisterView> {
                     width: MediaQuery.of(context).size.width * 0.8,
                     child: TextField(
                       obscureText: true,
+                      autocorrect: false,
                       style: const TextStyle(color: Colors.white),
                       decoration: const InputDecoration(hintText: 'تأكيد كلمة المرور'),
                       controller: _passwordConfirmController,

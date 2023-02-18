@@ -1,6 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/modules/local_user.dart';
 import 'package:flutter_application_1/views/entry_view.dart';
 import 'package:provider/provider.dart';
 
@@ -17,7 +16,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<LocalUser?>(context);
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

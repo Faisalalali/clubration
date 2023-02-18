@@ -76,7 +76,7 @@ class ClubView extends StatelessWidget {
                   ),
                   Container(
                     decoration: const BoxDecoration(
-                      color: Color(0xFF1BB58C),
+                      color: Color(0xFF373A48),
                       borderRadius: BorderRadius.all(
                         Radius.circular(10),
                       ),
