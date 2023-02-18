@@ -1,30 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/services/auth.dart';
-import 'package:flutter_application_1/views/Event_Name.dart';
-import 'package:flutter_application_1/views/home_view.dart';
-import 'package:flutter_application_1/widgets/custom_radio_button.dart';
+import 'package:flutter_application_1/views/event_days.dart';
 
-class CreatEvent extends StatefulWidget {
-  CreatEvent({super.key});
+class Rewards extends StatefulWidget {
+  const Rewards({super.key});
 
   @override
-  State<CreatEvent> createState() => _CreatEventState();
+  State<Rewards> createState() => _RweardsState();
 }
 
-class _CreatEventState extends State<CreatEvent> {
+class _RweardsState extends State<Rewards> {
   int selectedIndex = -1;
-  List<String> _list = ['بطولة', 'تجمع', 'ندوة', 'ورشة عمل', 'مسابقة'];
+  List<String> _list = ['Yes', 'No'];
   @override
   Widget build(BuildContext context) {
+    final dataKey = new GlobalKey();
     return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('نوع الفعالية'),
+            Text('هل في جوائز؟'),
             Wrap(
               direction: Axis.vertical,
-              children: List.generate(5, (index) {
+              children: List.generate(2, (index) {
                 return InkWell(
                   onTap: () {},
                   child: Container(
@@ -49,7 +47,7 @@ class _CreatEventState extends State<CreatEvent> {
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const EventName(),
+                  builder: (context) => const EventDays(),
                 ));
               },
               child: Icon(Icons.arrow_forward_ios),
