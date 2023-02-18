@@ -8,6 +8,7 @@ import 'package:flutter_application_1/views/profile_view.dart';
 import 'package:provider/provider.dart';
 
 import 'services/auth.dart';
+import 'views/request_poster_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,7 +31,7 @@ class MainApp extends StatelessWidget {
               bodyMedium: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
               bodySmall: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
             ).apply(
-              bodyColor: Color.fromRGBO(255, 255, 255, 1),
+              bodyColor: const Color.fromRGBO(255, 255, 255, 1),
               displayColor: Colors.white,
             ),
             scaffoldBackgroundColor: const Color(0xFF232736),
@@ -58,6 +59,6 @@ class MainApp extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             )),
-        home: const HomeView());
+        home: const RequestPosterView());
   }
 }

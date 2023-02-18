@@ -60,7 +60,7 @@ class EventView extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
-                            'الموعد',
+                            'التاريخ',
                             style: TextStyle(
                               fontSize: 12,
                             ),
@@ -147,50 +147,6 @@ class EventView extends StatelessWidget {
                   ),
                 ]),
               ),
-              // Spacer(),
-              // const Row(children: [
-              //   Expanded(
-              //       child: Divider(
-              //     color: Color(0xFF929292),
-              //     endIndent: 5,
-              //     indent: 42,
-              //     thickness: 2,
-              //   )),
-              //   Text("اضافة تفاصيل"),
-              //   Expanded(
-              //       child: Divider(
-              //     color: Color(0xFF929292),
-              //     indent: 5,
-              //     endIndent: 42,
-              //     thickness: 2,
-              //   )),
-              // ]),
-              // Center(
-              //   child: Container(
-              //     decoration: const BoxDecoration(
-              //       color: Color(0xFF373A48),
-              //       borderRadius: BorderRadius.all(
-              //         Radius.circular(10),
-              //       ),
-              //     ),
-              //     width: MediaQuery.of(context).size.width * 0.9,
-              //     height: MediaQuery.of(context).size.width * 0.2,
-              //   ),
-              // ),
-              // const Spacer(),
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 10),
-              //   child: Container(
-              //     decoration: const BoxDecoration(
-              //       color: Color(0xFF373A48),
-              //       // borderRadius: BorderRadius.all(
-              //       //   Radius.circular(10),
-              //       // ),
-              //     ),
-              //     width: MediaQuery.of(context).size.width,
-              //     height: MediaQuery.of(context).size.width * 0.2,
-              //   ),
-              // ),
             ],
           ),
         ),
