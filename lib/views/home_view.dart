@@ -135,17 +135,17 @@ class HomeView extends StatelessWidget {
                   GButton(
                     icon: Icons.calendar_today,
                     text: 'المهام',
-                    backgroundColor: Color.fromARGB(255, 94, 109, 255),
+                    backgroundColor: Color.fromARGB(255, 97, 204, 187),
                   ),
                   GButton(
                     icon: Icons.notifications,
                     text: 'الإحصائيات',
-                    backgroundColor: Color.fromARGB(255, 254, 177, 79),
+                    backgroundColor: Color.fromARGB(255, 97, 204, 187),
                   ),
                   GButton(
                     icon: Icons.person,
                     text: 'الملف الشخصي',
-                    backgroundColor: Color.fromARGB(255, 238, 57, 132),
+                    backgroundColor: Color.fromARGB(255, 97, 204, 187),
                   ),
                 ]),
           ),

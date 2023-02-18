@@ -1,7 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/modules/local_user.dart';
+import 'package:flutter_application_1/views/create_event.dart';
+import 'package:flutter_application_1/views/entry_view.dart';
 import 'package:flutter_application_1/views/home_view.dart';
+import 'package:flutter_application_1/views/profile_view.dart';
 import 'package:provider/provider.dart';
 
 import 'services/auth.dart';
@@ -27,7 +30,7 @@ class MainApp extends StatelessWidget {
               bodyMedium: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
               bodySmall: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
             ).apply(
-              bodyColor: Colors.white,
+              bodyColor: Color.fromRGBO(255, 255, 255, 1),
               displayColor: Colors.white,
             ),
             scaffoldBackgroundColor: const Color(0xFF232736),
