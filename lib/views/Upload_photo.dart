@@ -11,34 +11,46 @@ class EventPhoto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('رفع صورة البطولة'),
-            Padding(
-                padding: const EdgeInsets.all(33.0),
-                child: SizedBox(
-                  width: 90,
-                  child: ElevatedButton(
-                      onPressed: () {},
-                      child: const Icon(Icons.upload_file),
-                      style: ElevatedButton.styleFrom(
-                        primary: Color.fromARGB(255, 144, 203, 236),
-                        onPrimary: Colors.black,
-                        // shape: const CircleBorder(),
-                      )),
-                )),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const Rewards(),
-                          ));
-              },
-              child: Icon(Icons.arrow_forward_ios),
-            )
-          ],
-        ),
+      body: Stack(
+        children: [
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text('رفع صورة البطولة'),
+                Padding(
+                    padding: const EdgeInsets.all(33.0),
+                    child: SizedBox(
+                      width: 90,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            foregroundColor: Colors.black, backgroundColor: Color.fromARGB(255, 144, 203, 236),
+                            // shape: const CircleBorder(),
+                          ),
+                          child: const Icon(Icons.upload_file)),
+                    )),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const Rewards(),
+                    ));
+                  },
+                  child: const Icon(Icons.arrow_forward_ios),
+                )
+              ],
+            ),
+          ),
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: AppBar(
+              elevation: 0,
+              backgroundColor: Colors.transparent,
+            ),
+          )
+        ],
       ),
     );
   }

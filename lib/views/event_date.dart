@@ -14,57 +14,73 @@ class _DatePickerViewState extends State<DatePickerView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('اختر تاريخ البطولة'),
-            GestureDetector(
-              onTap: () async {
-                final DateTime? picked = await showDatePicker(
-                  context: context,
-                  initialDate: _selectedDate,
-                  firstDate: DateTime(2021),
-                  lastDate: DateTime(2024),
-                );
-                if (picked != null && picked != _selectedDate)
-                  setState(() {
-                    _selectedDate = picked;
-                  });
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Color(0xFF5E6DFF),
+      body: Stack(
+        children: [
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text('اختر تاريخ البطولة'),
+                GestureDetector(
+                  onTap: () async {
+                    final DateTime? picked = await showDatePicker(
+                      context: context,
+                      initialDate: _selectedDate,
+                      firstDate: DateTime(2021),
+                      lastDate: DateTime(2024),
+                    );
+                    if (picked != null && picked != _selectedDate) {
+                      setState(() {
+                        _selectedDate = picked;
+                      });
+                    }
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: const Color(0xFF5E6DFF),
+                    ),
+                    // color: Color(0xFF5E6DFF),
+                    height: 40,
+                    width: 120,
+                    child: Center(child: Text(_selectedDate.toString().substring(0, 10))),
+                  ),
                 ),
-                // color: Color(0xFF5E6DFF),
-                height: 40,
-                width: 120,
-                child: Center(child: Text(_selectedDate.toString().substring(0, 10))),
-              ),
+                ElevatedButton(
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                              title: const Text('تم اضافة الحدث بنجاح'),
+                              actions: [
+                                ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                      Navigator.of(context).pushAndRemoveUntil(
+                                          MaterialPageRoute(
+                                            builder: (context) => const HomeView(),
+                                          ),
+                                          (route) => false);
+                                    },
+                                    child: const Text('حسنا'))
+                              ],
+                            ));
+                  },
+                  child: const Icon(Icons.arrow_forward_ios),
+                )
+              ],
             ),
-            ElevatedButton(
-              onPressed: () {
-                showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                          title: Text('تم اضافة الحدث بنجاح'),
-                          actions: [
-                            ElevatedButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => const HomeView(),
-                                  ));
-                                },
-                                child: Text('حسنا'))
-                          ],
-                        ));
-              },
-              child: Icon(Icons.arrow_forward_ios),
-            )
-          ],
-        ),
+          ),
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: AppBar(
+              elevation: 0,
+              backgroundColor: Colors.transparent,
+            ),
+          )
+        ],
       ),
     );
   }

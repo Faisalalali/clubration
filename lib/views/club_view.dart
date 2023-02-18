@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/views/create_event.dart';
 import 'package:flutter_application_1/widgets/event_card.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
@@ -131,7 +132,13 @@ class ClubView extends StatelessWidget {
             foregroundColor: Colors.white,
             label: 'حدث جديد',
             labelStyle: const TextStyle(fontSize: 18.0),
-            onTap: () => print('SECOND CHILD'),
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => CreatEvent(),
+                ),
+              );
+            },
           ),
         ],
       ),
