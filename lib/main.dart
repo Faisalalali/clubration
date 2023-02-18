@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/modules/local_user.dart';
-import 'package:flutter_application_1/views/home_view.dart';
+import 'package:flutter_application_1/views/club_view.dart';
 import 'package:provider/provider.dart';
 
 import 'services/auth.dart';
@@ -55,6 +55,6 @@ class MainApp extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             )),
-        home: const HomeView());
+        home: const ClubView());
   }
 }
