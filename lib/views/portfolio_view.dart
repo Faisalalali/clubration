@@ -20,7 +20,7 @@ class PortfolioView extends StatelessWidget {
             child: Column(
               children: [
                 CreditsWidget(),
-                ClubWidget(),
+                // ClubWidget(),
               ],
             ),
           ),
