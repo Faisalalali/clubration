@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/services/auth.dart';
 
+import 'home_view.dart';
+
 class LoginView extends StatelessWidget {
   const LoginView({super.key, required this.userEmail});
   final String userEmail;
@@ -32,6 +34,8 @@ class LoginView extends StatelessWidget {
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width * 0.8,
                     child: TextField(
+                      obscureText: true,
+                      autocorrect: false,
                       decoration: const InputDecoration(hintText: 'كلمة المرور'),
                       onChanged: (value) {
                         password = value;
@@ -64,10 +68,16 @@ class LoginView extends StatelessWidget {
                             onPressed: () async {
                               var result = await auth.signInWithEmailAndPassword('s$userEmail@kfupm.edu.sa', password);
                               if (result == null) {
-                                print('error signing in');
+                                // print('error signing in');
                               } else {
-                                print('signed in');
-                                print(result.uid);
+                                // print('signed in');
+                                // print(result?.uid);
+                                Navigator.of(context).pushAndRemoveUntil(
+                                  MaterialPageRoute(
+                                    builder: (context) => const HomeView(),
+                                  ),
+                                  (route) => false,
+                                );
                               }
                             },
                             child: const Text('تسجيل دخول'),

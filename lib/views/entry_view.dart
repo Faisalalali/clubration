@@ -42,13 +42,11 @@ class _EntryViewState extends State<EntryView> {
                       child: SizedBox(
                         width: MediaQuery.of(context).size.width * 0.8,
                         child: TextField(
-                          style: TextStyle(color: Colors.white),
+                          style: const TextStyle(color: Colors.white),
                           controller: _uidController,
                           decoration:
                               const InputDecoration(hintText: 'رقمك الجامعي', hintTextDirection: TextDirection.rtl),
-                          onChanged: (value) {
-                            // setState(() {});
-                          },
+                          onChanged: (value) {},
                         ),
                       ),
                     ),
@@ -60,7 +58,7 @@ class _EntryViewState extends State<EntryView> {
                               if (!valid_id.hasMatch(_uidController.text)) {
                                 showDialog(
                                     context: context,
-                                    builder: (ctx) => AlertDialog(
+                                    builder: (ctx) => const AlertDialog(
                                           title: Text('الرقم الجامعي غير صحيح'),
                                         ));
                                 return;

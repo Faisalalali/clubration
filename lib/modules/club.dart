@@ -13,7 +13,6 @@ class Club {
   }
 
   factory Club.fromMap(Map<String, dynamic> map) {
-    // if (map == null) return null;
     return Club(
       cid: map['cid'],
       isAcademic: map['isAcademic'],

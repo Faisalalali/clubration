@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/views/profile_view.dart';
 import 'package:flutter_application_1/widgets/club_widget.dart';
 import 'package:flutter_application_1/widgets/home_task_widget.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -8,20 +9,24 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final clubs = ['IEClub', 'cclub', 'media'];
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(MediaQuery.of(context).size.height * 0.165),
+        preferredSize: Size.fromHeight(MediaQuery.of(context).size.height * 0.1),
         child: AppBar(
           backgroundColor: const Color(0xFF354252),
           actions: const [
             Center(
               child: Text(
-                'مرحبا بك، ضياءالدين حميدالدين',
+                '!مرحبا بك، طارق الجاوي',
               ),
             ),
             CircleAvatar(
               radius: 50,
               backgroundColor: Color(0xFF5E6DFF),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                  child: Image(image: AssetImage('assets/images/22.png'))),
               // child: ,
             )
           ],
@@ -30,13 +35,13 @@ class HomeView extends StatelessWidget {
           ),
         ),
       ),
-      body: const Center(
+      body: Center(
         child: Padding(
-          padding: EdgeInsets.only(top: 20),
+          padding: const EdgeInsets.only(top: 20),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Row(children: [
+                const Row(children: [
                   Expanded(
                       child: Divider(
                     color: Color(0xFF929292),
@@ -53,7 +58,7 @@ class HomeView extends StatelessWidget {
                     thickness: 2,
                   )),
                 ]),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 40),
                   child: SingleChildScrollView(
                     reverse: true,
@@ -62,17 +67,22 @@ class HomeView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         HomeTaskWidget(),
+                        SizedBox(width: 15),
                         HomeTaskWidget(),
-                        SizedBox(width: 20),
+                        SizedBox(width: 15),
                         HomeTaskWidget(),
+                        SizedBox(width: 15),
                         HomeTaskWidget(),
-                        SizedBox(width: 20),
+                        SizedBox(width: 15),
                         HomeTaskWidget(),
                       ],
                     ),
                   ),
                 ),
-                Row(children: [
+                const SizedBox(
+                  height: 40,
+                ),
+                const Row(children: [
                   Expanded(
                       child: Divider(
                     color: Color(0xFF929292),
@@ -90,14 +100,14 @@ class HomeView extends StatelessWidget {
                   )),
                 ]),
                 Column(
-                  children: [
-                    ClubWidget(),
-                    ClubWidget(),
-                    ClubWidget(),
-                    ClubWidget(),
-                    ClubWidget(),
-                    ClubWidget(),
-                  ],
+                  children: clubs
+                      .map((e) => Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ClubWidget(
+                              club: e,
+                            ),
+                          ))
+                      .toList(),
                 ),
               ],
             ),
@@ -111,11 +121,12 @@ class HomeView extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: GNav(
+                selectedIndex: 0,
                 padding: const EdgeInsets.fromLTRB(1, 6, 7, 3),
                 activeColor: Colors.white,
                 color: Colors.white,
                 backgroundColor: const Color(0xFF354252),
-                tabMargin: EdgeInsets.fromLTRB(15, 4, 15, 4),
+                tabMargin: const EdgeInsets.fromLTRB(15, 4, 15, 4),
 
                 // tabBackgroundColor: const Color(0xFF1BB58C),
                 // tabActiveBorder: ,
@@ -123,29 +134,36 @@ class HomeView extends StatelessWidget {
                 tabBorderRadius: 10,
                 iconSize: 20,
                 gap: 10,
-                textStyle: TextStyle(fontSize: 15),
-                tabs: const [
-                  GButton(
+                textStyle: const TextStyle(fontSize: 15),
+                tabs: [
+                  const GButton(
                     icon: Icons.home,
                     text: 'الرئيسية',
                     textSize: 3,
                     iconActiveColor: Colors.white,
                     backgroundColor: Color.fromARGB(255, 97, 204, 187),
                   ),
-                  GButton(
+                  const GButton(
                     icon: Icons.calendar_today,
                     text: 'المهام',
                     backgroundColor: Color.fromARGB(255, 97, 204, 187),
                   ),
-                  GButton(
+                  const GButton(
                     icon: Icons.notifications,
                     text: 'الإحصائيات',
                     backgroundColor: Color.fromARGB(255, 97, 204, 187),
                   ),
                   GButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => const ProfileView(),
+                        ),
+                      );
+                    },
                     icon: Icons.person,
                     text: 'الملف الشخصي',
-                    backgroundColor: Color.fromARGB(255, 97, 204, 187),
+                    backgroundColor: const Color.fromARGB(255, 97, 204, 187),
                   ),
                 ]),
           ),

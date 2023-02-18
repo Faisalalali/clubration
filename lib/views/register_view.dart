@@ -33,7 +33,7 @@ class _RegisterViewState extends State<RegisterView> {
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width * 0.8,
                     child: TextFormField(
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       enabled: false,
                       initialValue: widget.userEmail,
                       decoration: const InputDecoration(hintText: 'رقمك الجامعي'),
@@ -45,7 +45,9 @@ class _RegisterViewState extends State<RegisterView> {
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width * 0.8,
                     child: TextField(
-                      style: TextStyle(color: Colors.white),
+                      obscureText: true,
+                      autocorrect: false,
+                      style: const TextStyle(color: Colors.white),
                       decoration: const InputDecoration(hintText: 'كلمة المرور'),
                       controller: _passwordController,
                     ),
@@ -56,7 +58,9 @@ class _RegisterViewState extends State<RegisterView> {
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width * 0.8,
                     child: TextField(
-                      style: TextStyle(color: Colors.white),
+                      obscureText: true,
+                      autocorrect: false,
+                      style: const TextStyle(color: Colors.white),
                       decoration: const InputDecoration(hintText: 'تأكيد كلمة المرور'),
                       controller: _passwordConfirmController,
                     ),
@@ -79,9 +83,12 @@ class _RegisterViewState extends State<RegisterView> {
                               's${widget.userEmail}@kfupm.edu.sa', _passwordController.text);
 
                           print('success');
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const HomeView(),
-                          ));
+                          Navigator.of(context).pushAndRemoveUntil(
+                            MaterialPageRoute(
+                              builder: (context) => const HomeView(),
+                            ),
+                            (route) => false,
+                          );
                         },
                         child: const Text('تسجيل جديد'),
                       ),
