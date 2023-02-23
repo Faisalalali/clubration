@@ -21,68 +21,87 @@ Clubration is a university clubs assistant app that helps club members organize 
 ## Initial Designs
 
 > Feel free to view the initial designs in [Figma](https://www.figma.com/file/3ogjFsmTrM2cRfUCKInEzA/ClubMaster?node-id=0%3A1&t=oUPDwiaG5mxgYHed-1)
-<figure>
-<img alt="Create a new account page" src="resources/screens/مرحبا.svg" width=300>
-<figcaption align="center">
-Fig.1 - Welcome to Clubration
-</figcaption>
-</figure>
 
-<figure>
-<img alt="Create a new account page" src="resources/screens/إنشاء حساب.svg" width=300>
-<figcaption align="center">
-Fig.2 - Create an Account
-</figcaption>
-</figure>
-
-<figure>
-<img alt="Create a new account page" src="resources/screens/تم إنشاء حساب.svg " width=300>
-<figcaption align="center">
-Fig.3 - Account Created
-</figcaption>
-</figure>
-
-<figure>
-<img alt="Create a new account page" src="resources/screens/تسجيل الدخول.svg" width=300>
-<figcaption align="center">
-Fig.4 - Login
-</figcaption>
-</figure>
-
-<figure>
-<img alt="Create a new account page" src="resources/screens/الصفحة الرئيسية.svg" width=300>
-<figcaption align="center">
-Fig.5 - Main Page
-</figcaption>
-</figure>
-
-<figure>
-<img alt="Create a new account page" src="resources/screens/حسابي الشخصي.svg" width=300>
-<figcaption align="center">
-Fig.6 - Profile
-</figcaption>
-</figure>
-
-<figure>
-<img alt="Create a new account page" src="resources/screens/البورفوليو.svg" width=300>
-<figcaption align="center">
-Fig.7 - Portfolio
-</figcaption>
-</figure>
-
-<figure>
-<img alt="Create a new account page" src="resources/screens/صفحة الحدث.svg" width=300>
-<figcaption align="center">
-Fig.8 - Event Page
-</figcaption>
-</figure>
-
-<figure>
-<img alt="Create a new account page" src="resources/screens/احصائياتي.svg" width=300>
-<figcaption align="center">
-Fig.9 - Statistics
-</figcaption>
-</figure>
+<table>
+  <tr>
+    <td>
+      <figure>
+        <img alt="Create a new account page" src="resources/screens/مرحبا.svg" width="300">
+        <figcaption align="center">
+          Fig.1 - Welcome to Clubration
+        </figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img alt="Create a new account page" src="resources/screens/إنشاء حساب.svg" width="300">
+        <figcaption align="center">
+          Fig.2 - Create an Account
+        </figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img alt="Create a new account page" src="resources/screens/تم إنشاء حساب.svg " width="300">
+        <figcaption align="center">
+          Fig.3 - Account Created
+        </figcaption>
+      </figure>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <figure>
+        <img alt="Create a new account page" src="resources/screens/تسجيل الدخول.svg" width="300">
+        <figcaption align="center">
+          Fig.4 - Login
+        </figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img alt="Create a new account page" src="resources/screens/الصفحة الرئيسية.svg" width="300">
+        <figcaption align="center">
+          Fig.5 - Main Page
+        </figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img alt="Create a new account page" src="resources/screens/حسابي الشخصي.svg" width="300">
+        <figcaption align="center">
+          Fig.6 - Profile
+        </figcaption>
+      </figure>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <figure>
+        <img alt="Create a new account page" src="resources/screens/البورفوليو.svg" width="300">
+        <figcaption align="center">
+          Fig.7 - Portfolio
+        </figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img alt="Create a new account page" src="resources/screens/صفحة الحدث.svg" width="300">
+        <figcaption align="center">
+          Fig.8 - Event Page
+        </figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img alt="Create a new account page" src="resources/screens/احصائياتي.svg" width="300">
+        <figcaption align="center">
+          Fig.9 - Statistics
+        </figcaption>
+      </figure>
+    </td>
+  </tr>
+</table>
 
 ## Installation
 
