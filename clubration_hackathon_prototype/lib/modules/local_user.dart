@@ -41,7 +41,7 @@ class LocalUser {
   }
 
   factory LocalUser.fromMap(Map<String, dynamic> map) {
-    if (map == null) return LocalUser(uid: '', displayName: '');
+    // if (map == null) return LocalUser(uid: '', displayName: '');
     return LocalUser(
       uid: map['uid'],
       displayName: map['displayName'],

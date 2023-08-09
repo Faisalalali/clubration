@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/services/auth.dart';
-import 'package:flutter_application_1/views/event_days.dart';
-import 'package:flutter_application_1/views/home_view.dart';
 import 'package:flutter_application_1/views/rewards.dart';
-import 'package:flutter_application_1/widgets/custom_radio_button.dart';
 
 class EventPhoto extends StatelessWidget {
   const EventPhoto({super.key});
@@ -25,7 +21,7 @@ class EventPhoto extends StatelessWidget {
                       child: ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
-                            foregroundColor: Colors.black, backgroundColor: Color.fromARGB(255, 144, 203, 236),
+                            foregroundColor: Colors.black, backgroundColor: const Color.fromARGB(255, 144, 203, 236),
                             // shape: const CircleBorder(),
                           ),
                           child: const Icon(Icons.upload_file)),

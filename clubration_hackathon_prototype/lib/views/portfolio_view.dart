@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widgets/club_widget.dart';
-import 'package:flutter_application_1/widgets/home_task_widget.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import '../widgets/profile_button.dart';
 
 class PortfolioView extends StatelessWidget {
   const PortfolioView({super.key});
@@ -42,7 +39,7 @@ class PortfolioView extends StatelessWidget {
               activeColor: Colors.white,
               color: Colors.white,
               backgroundColor: const Color(0xFF354252),
-              tabMargin: EdgeInsets.fromLTRB(15, 4, 15, 4),
+              tabMargin: const EdgeInsets.fromLTRB(15, 4, 15, 4),
 
               // tabBackgroundColor: const Color(0xFF1BB58C),
               // tabActiveBorder: ,
@@ -50,7 +47,7 @@ class PortfolioView extends StatelessWidget {
               tabBorderRadius: 10,
               iconSize: 20,
               gap: 10,
-              textStyle: TextStyle(fontSize: 15),
+              textStyle: const TextStyle(fontSize: 15),
               tabs: const [
                 GButton(
                   icon: Icons.home,
@@ -185,7 +182,7 @@ class CreditsWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Padding(
-                    padding: EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.only(left: 10),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -207,10 +204,10 @@ class CreditsWidget extends StatelessWidget {
 
   List<Widget> get clubNames {
     Map<String, Color> clubColors = {
-      'نادي الحاسب الآلي': Color.fromRGBO(254, 177, 79, 1),
-      'نادي الرياضات الذهنية والإلكترونية': Color.fromRGBO(238, 57, 133, 1),
-      'النادي الإعلامي': Color.fromRGBO(94, 109, 255, 1),
-      'أخرى': Color.fromRGBO(162, 162, 162, 1),
+      'نادي الحاسب الآلي': const Color.fromRGBO(254, 177, 79, 1),
+      'نادي الرياضات الذهنية والإلكترونية': const Color.fromRGBO(238, 57, 133, 1),
+      'النادي الإعلامي': const Color.fromRGBO(94, 109, 255, 1),
+      'أخرى': const Color.fromRGBO(162, 162, 162, 1),
     };
     List<Widget> list = [];
 
@@ -227,7 +224,7 @@ class CreditsWidget extends StatelessWidget {
             ),
             Text(
               clubColors.keys.elementAt(i),
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
                 color: Colors.white,
               ),

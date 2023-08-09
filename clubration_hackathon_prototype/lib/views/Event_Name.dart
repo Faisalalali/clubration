@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/services/auth.dart';
 import 'package:flutter_application_1/views/Upload_photo.dart';
-import 'package:flutter_application_1/views/home_view.dart';
-import 'package:flutter_application_1/widgets/custom_radio_button.dart';
 
 class EventName extends StatelessWidget {
   const EventName({super.key});

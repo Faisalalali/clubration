@@ -13,7 +13,6 @@ class _EventDaysState extends State<EventDays> {
   final List<String> _list = ['يوم', 'اكثر من يوم'];
   @override
   Widget build(BuildContext context) {
-    final dataKey = GlobalKey();
     return Scaffold(
       body: Stack(
         children: [

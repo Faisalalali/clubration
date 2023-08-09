@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/services/auth.dart';
 import 'package:flutter_application_1/views/home_view.dart';
 
 class RegisterView extends StatefulWidget {
@@ -17,9 +16,9 @@ class _RegisterViewState extends State<RegisterView> {
 
   @override
   Widget build(BuildContext context) {
-    final auth = Auth();
-    String password = '';
-    String passwordConfirm = '';
+    // final auth = Auth();
+    // String password = '';
+    // String passwordConfirm = '';
     return Scaffold(
       body: Stack(
         children: [
@@ -79,8 +78,8 @@ class _RegisterViewState extends State<RegisterView> {
                             print('كلمة المرور غير متطابقة');
                             return;
                           }
-                          var result = await auth.registerWithEmailAndPassword(
-                              's${widget.userEmail}@kfupm.edu.sa', _passwordController.text);
+                          // var result = await auth.registerWithEmailAndPassword(
+                          //     's${widget.userEmail}@kfupm.edu.sa', _passwordController.text);
 
                           print('success');
                           Navigator.of(context).pushAndRemoveUntil(

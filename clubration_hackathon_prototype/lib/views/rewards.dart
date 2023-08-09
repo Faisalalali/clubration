@@ -13,7 +13,7 @@ class _RweardsState extends State<Rewards> {
   final List<String> _list = ['نعم', 'لا'];
   @override
   Widget build(BuildContext context) {
-    final dataKey = GlobalKey();
+    // final dataKey = GlobalKey();
     return Scaffold(
       body: Stack(
         children: [
