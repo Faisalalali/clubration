@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img width="300" src="https://raw.githubusercontent.com/Faisalalali/kfupm-innovation-hackathon-222/main/resources/Logo.svg">
+  <img width="300" src="https://raw.githubusercontent.com/Faisalalali/clubration/tree/main/clubration_hackathon_prototype/resources/Logo.svg">
   <br>
   Clubration
 </h1>
